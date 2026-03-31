@@ -1,6 +1,6 @@
-# Evolution of Todo — Hackathon II
+# Todo-Evolution
 
-Spec-Driven Development project built with Claude Code and Spec-Kit Plus.
+From CLI to Cloud-Native AI — A spec-driven Todo app built with Claude Code | Python • Next.js • FastAPI • Kubernetes • Kafka
 
 ## Phases
 
