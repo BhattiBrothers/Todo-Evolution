@@ -5,6 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from db import create_db_and_tables
 from routes.tasks import router as tasks_router
 from routes.chat import router as chat_router
+from routes.subscriptions import router as subscriptions_router
 
 app = FastAPI(title="Todo Evolution API", version="2.0.0")
 
@@ -29,3 +30,4 @@ def health():
 
 app.include_router(tasks_router)
 app.include_router(chat_router)
+app.include_router(subscriptions_router)

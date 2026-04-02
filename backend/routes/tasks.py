@@ -7,6 +7,7 @@ from sqlmodel import Session, select
 from db import get_session
 from models import Task, TaskCreate, TaskUpdate, TaskRead
 from auth import get_current_user
+from events import publish_event
 
 router = APIRouter(prefix="/api/{user_id}/tasks", tags=["tasks"])
 
@@ -39,6 +40,7 @@ def create_task(
     session.add(task)
     session.commit()
     session.refresh(task)
+    publish_event("task.created", {"task_id": task.id, "title": task.title, "user_id": user_id})
     return task
 
 

@@ -13,6 +13,10 @@ spec:
     metadata:
       labels:
         app: backend
+      annotations:
+        dapr.io/enabled: "true"
+        dapr.io/app-id: "todo-backend"
+        dapr.io/app-port: "8000"
     spec:
       containers:
         - name: backend
