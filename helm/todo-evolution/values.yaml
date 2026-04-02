@@ -1,0 +1,21 @@
+backend:
+  image: todo-backend
+  tag: latest
+  replicas: 1
+  port: 8000
+  env:
+    databaseUrl: ""
+    betterAuthSecret: ""
+    groqApiKey: ""
+
+frontend:
+  image: todo-frontend
+  tag: latest
+  replicas: 1
+  port: 3000
+  env:
+    nextPublicApiUrl: "http://backend-svc:8000"
+    nextPublicAppUrl: "http://localhost:3000"
+    betterAuthUrl: "http://localhost:3000"
+    betterAuthSecret: ""
+    databaseUrl: ""
